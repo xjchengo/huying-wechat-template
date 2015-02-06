@@ -122,7 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Xjchen\BasicAdmin\BasicAdminServiceProvider',
+		// 'Xjchen\BasicAdmin\BasicAdminServiceProvider',
 
 	),
 
