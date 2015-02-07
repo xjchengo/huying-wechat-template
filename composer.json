@@ -38,9 +38,8 @@
 			"cd workbench/xjchen/basic-admin && git checkout -b develop origin/develop && composer update",
 			"echo 'add BasicAdminServiceProvider' && sed -i -e 's/\\/\\/weihuying //' app/config/app.php",
 			"php artisan asset:publish --bench=xjchen/basic-admin",
-			"php artisan basic-admin:migrate",
 			"cp .env.sample.php .env.local.php",
-			"echo 请设置环境及配置数据库信息"
+			"echo 请设置环境及配置数据库信息,然后运行 php artisan asset:publish --bench=xjchen/basic-admin"
 		]
 	},
 	"config": {
