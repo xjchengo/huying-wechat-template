@@ -19,19 +19,24 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+			"echo install-cmd",
 			"php artisan clear-compiled",
-			"php artisan optimize"
+			"php artisan optimize",
+			"echo install-cmd-end"
 		],
 		"post-update-cmd": [
+			"echo update-cmd",
 			"php artisan clear-compiled",
-			"php artisan optimize"
+			"php artisan optimize",
+			"echo update-cmd-end"
 		],
 		"post-create-project-cmd": [
-			"echo 'add BasicAdminServiceProvider' && sed -i -e 's/\\/\\/weihuying //' app/config/app.php",
+			"echo create-project",
 			"php artisan key:generate",
 			"mkdir -p workbench/xjchen",
 			"cd workbench/xjchen && git clone git@coding.net:xjchengo/basic-admin.git",
 			"cd workbench/xjchen/basic-admin && git checkout -b develop origin/develop && composer update",
+			"echo 'add BasicAdminServiceProvider' && sed -i -e 's/\\/\\/weihuying //' app/config/app.php",
 			"php artisan asset:publish --bench=xjchen/basic-admin",
 			"php artisan basic-admin:migrate",
 			"cp .env.sample.php .env.local.php",
