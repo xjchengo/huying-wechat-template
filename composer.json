@@ -27,6 +27,7 @@
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
+			"echo 'add BasicAdminServiceProvider' && sed -i -e 's/\\/\\/weihuying //' app/config/app.php",
 			"php artisan key:generate",
 			"mkdir -p workbench/xjchen",
 			"cd workbench/xjchen && git clone git@coding.net:xjchengo/basic-admin.git",

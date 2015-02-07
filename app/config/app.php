@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'gWy0d1a1cYcOzdIIGO0Ha1GfWBuFNiQk',
+	'key' => 'wlSG2aL4Vk16s1PrhfpEBfkCZLzdTPc2',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -122,7 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		// 'Xjchen\BasicAdmin\BasicAdminServiceProvider',
+		'Xjchen\BasicAdmin\BasicAdminServiceProvider',
 
 	),
 
