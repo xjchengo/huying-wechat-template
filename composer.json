@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"xjchen/basic-admin": "dev-develop@dev"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",
@@ -23,31 +24,30 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
-			"echo install-cmd",
 			"php artisan clear-compiled",
-			"php artisan optimize",
-			"echo install-cmd-end"
+			"php artisan ide-helper:generate",
+			"php artisan optimize"
 		],
 		"post-update-cmd": [
-			"echo update-cmd",
 			"php artisan clear-compiled",
-			"php artisan optimize",
-			"echo update-cmd-end"
+			"php artisan ide-helper:generate",
+			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
-			"echo create-project",
 			"php artisan key:generate",
-			"mkdir -p workbench/xjchen",
-			"cd workbench/xjchen && git clone git@coding.net:xjchengo/basic-admin.git",
-			"cd workbench/xjchen/basic-admin && git checkout -b develop origin/develop && composer update",
-			"echo 'add BasicAdminServiceProvider' && sed -i -e 's/\\/\\/weihuying //' app/config/app.php",
 			"php artisan asset:publish --bench=xjchen/basic-admin",
 			"cp .env.sample.php .env.local.php",
-			"echo 请设置环境及配置数据库信息,然后运行 php artisan asset:publish --bench=xjchen/basic-admin"
+			"echo 请设置环境及配置数据库信息,然后运行 php artisan basic-admin:migrate"
 		]
 	},
 	"config": {
 		"preferred-install": "dist"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url":  "git@coding.net:xjchengo/basic-admin.git"
+		}
+	],
 	"minimum-stability": "stable"
 }
