@@ -124,7 +124,7 @@ return array(
 
 		'Way\Generators\GeneratorsServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-		//weihuying 'Xjchen\BasicAdmin\BasicAdminServiceProvider',
+		'Xjchen\BasicAdmin\BasicAdminServiceProvider',
 
 	),
 
