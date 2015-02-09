@@ -35,7 +35,7 @@
 		],
 		"post-create-project-cmd": [
 			"php artisan key:generate",
-			"php artisan asset:publish --bench=xjchen/basic-admin",
+			"php artisan asset:publish xjchen/basic-admin",
 			"cp .env.sample.php .env.local.php",
 			"echo 请设置环境及配置数据库信息,然后运行 php artisan basic-admin:migrate"
 		]
