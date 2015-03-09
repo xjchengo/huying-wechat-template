@@ -88,3 +88,12 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('wechat-login', function()
+{
+    if (!Session::has('openid')) {
+        Session::put('wechat-login-before-url', Request::fullUrl());
+        return Redirect::route('wechat.login', ['openid' => Input::get('openid')]);
+    }
+});
+

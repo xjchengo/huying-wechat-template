@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('wechat-login', [
+    'as' => 'wechat.login',
+    'uses' => 'Wechat\PublicController@login'
+]);
